@@ -151,15 +151,27 @@ const studentThree = new Student({
 })
 
 const proManOne = new ProjectManager({
-    name: 'jen',
-    age: '31',
-    location: 'Ohio',
+    name: 'Jenna',
+    age: '27',
+    location: 'Columbus, OH',
     specialty: 'javascript',
     favLanguage: 'CSS',
     catchPhrase: 'Shout out to pears',
-    previousBackground: 'Welder',
+    previousBackground: 'Model',
     className: 'Web25',
     favSubjects: ['Redux', 'CSS', 'Python']
+})
+
+const proManTwo = new ProjectManager({
+    name: 'Debby',
+    age: '26',
+    location: 'Huntsville, AL',
+    specialty: 'javascript',
+    favLanguage: 'CSS',
+    catchPhrase: 'Life is a wild ride',
+    previousBackground: 'Actress',
+    className: 'Web25',
+    favSubjects: ['React', 'HTML', 'Javascript']
 })
 
 console.log(instructOne.demo());
