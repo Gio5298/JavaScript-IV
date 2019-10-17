@@ -14,7 +14,7 @@ class Person{
     }//methods under here
     speak(){
         return `Hello my name is ${this.name}, I am from ${this.location}.`
-    }
+    }//logs greeting^^
 }
 
 /*
@@ -39,10 +39,11 @@ class Instructor extends Person{
     }//methods under here
     demo(subject = ['HTML', 'CSS', 'Javascript']){
         return `Today we are learning about ${subject[2]}`
-    }
+    }//logs phrase about daily subject^^
+
     grade(subject = ['HTML', 'CSS', 'Javascript']){
-        return `${this.name} receives a perfect score on ${subject[2]}`
-    }
+        return `${studentOne.name} receives a perfect score on ${subject[2]}`
+    }//logs score response^^
 }
 
 /*
@@ -56,7 +57,7 @@ class Instructor extends Person{
 // Student has the following methods:
 //[x/1-2] listsSubjects a method that logs out all of the student's favoriteSubjects one by one.
 //[x] PRAssignment a method that receives a subject as an argument and logs out that the student.name has submitted a PR for {subject}
-//[] sprintChallenge similar to PRAssignment but logs out student.name has begun sprint challenge on {subject}
+//[x] sprintChallenge similar to PRAssignment but logs out student.name has begun sprint challenge on {subject}
 */
 
 class Student extends Person{
@@ -70,30 +71,86 @@ class Student extends Person{
         this.favSubjects.forEach(subject => {
            return console.log(subject);
     });
-    }//logs all subjects 1by1
+    }//logs all subjects 1by1^^
 
     PRAssignment(subject = ['HTML', 'CSS', 'Javascript']){
         return `${this.name} has submitted a PR for ${subject[0]}`
-    };//logs that the student has submitted a PR
+    };//logs that the student has submitted a PR^^
 
     sprintChallenge(subject = ['HTML Sprint', 'CSS Sprint', 'Javascript Sprint']){
         return `${this.name} has begun sprint challenge ${subject[2]}`
-    }
+    }//logs that student has begun sprint challenge^^
 }
 
 /*
 // Project Manager
-// Now that we have instructors and students, we'd be nowhere without our PM's
-//[] ProjectManagers are extensions of Instructors
-//[] ProjectManagers have the following unique props:
-//[] gradClassName: i.e. CS1
-//[] favInstructor: i.e. Sean
-//[] ProjectManagers have the following Methods:
+//- Now that we have instructors and students, we'd be nowhere without our PM's
+//[x] ProjectManagers are extensions of Instructors
+//- ProjectManagers have the following unique props:
+//[x] gradClassName: i.e. CS1
+//[x] favInstructor: i.e. Sean
+//- ProjectManagers have the following Methods:
 //[] standUp a method that takes in a slack channel and logs `{name} announces to {channel}, @channel standy times!​​​​​
 //[] debugsCode a method that takes in a student object and a subject and logs out {name} debugs {student.name}'s code on {subject}
 */
 
-const personOne = new Student({
+class ProjectManager extends Instructor{
+    constructor(proManAttrs){
+        super(proManAttrs);
+        this.gradClassName = proManAttrs.gradClassName,
+        this.favInstructor = proManAttrs.favInstructor
+    };
+    standUp(){
+        return `${this.name} anounces to ${channel}, @channel standy times!`
+    }
+}
+
+const instructOne = new Instructor({
+    name: 'Tyler',
+    age: '30',
+    location: 'Columbus, OH',
+    specialty: 'Python',
+    favLanguage: 'CSS',
+    catchPhrase: 'I care not that it is your date of birth'
+})
+
+const instructTwo = new Instructor({
+    name: 'Josh',
+    age: '31',
+    location: 'Columbus, OH',
+    specialty: 'Redux',
+    favLanguage: 'Javascript',
+    catchPhrase: 'Growing grass motivates me.'
+})
+
+const studentOne = new Student({
+    name: 'Ryan',
+    age: '22',
+    location: 'Phoenix, AZ',
+    previousBackground: 'museum guide',
+    className: 'Web21',
+    favSubjects: ['Python', 'Redux', 'CSS']
+})
+
+const studentTwo = new Student({
+    name: 'Gio',
+    age: '21',
+    location: 'Rio Rico, AZ',
+    previousBackground: 'booking agent',
+    className: 'Web21',
+    favSubjects: ['CSS', 'Redux', 'Javascript']
+})
+
+const studentThree = new Student({
+    name: 'Gaby',
+    age: '21',
+    location: 'Phoenix, AZ',
+    previousBackground: 'astronaut',
+    className: 'Web21',
+    favSubjects: ['HTML', 'CSS', 'Javascript']
+})
+
+const proManOne = new ProjectManager({
     name: 'jen',
     age: '31',
     location: 'Ohio',
@@ -105,8 +162,8 @@ const personOne = new Student({
     favSubjects: ['Redux', 'CSS', 'Python']
 })
 
-// console.log(personOne.demo());
-// console.log(personOne.grade());
-console.log(personOne.listsSubjects());
-console.log(personOne.PRAssignment());
-console.log(personOne.sprintChallenge());
+console.log(instructOne.demo());
+console.log(instructTwo.grade());
+console.log(studentOne.listsSubjects());
+console.log(studentTwo.PRAssignment());
+console.log(studentThree.sprintChallenge());
