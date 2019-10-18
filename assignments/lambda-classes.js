@@ -1,6 +1,6 @@
 // CODE here for your Lambda Classes
 
-/* Person
+/*=== Person ===
 //[] First we need a Person class. This will be our base-class
 //[] Person receives name age location all as props
 //[] Person receives speak as a method.
@@ -18,14 +18,14 @@ class Person{
 }
 
 /*
-// Instructor
-// Now that we have a Person as our base class, we'll build our Instructor class.
+//=== Instructor ===
+//- Now that we have a Person as our base class, we'll build our Instructor class.
 //[x] Instructor uses the same attributes that have been set up by Person
-// Instructor has the following unique props:
+//- Instructor has the following unique props:
 //[x] specialty what the Instructor is good at i.e. 'redux'
 //[x] favLanguage i.e. 'JavaScript, Python, Elm etc.'
 //[x] catchPhrase i.e. Don't forget the homies
-// Instructor has the following methods:
+//- Instructor has the following methods:
 //[x] demo receives a subject string as an argument and logs out the phrase 'Today we are learning about {subject}' where subject is the param passed in.
 //[x] grade receives a student object and a subject string as arguments and logs out '{student.name} receives a perfect score on {subject}'
 // */
@@ -47,14 +47,14 @@ class Instructor extends Person{
 }
 
 /*
-// Student
+//=== Student ===
 // Now we need some students!
 //[x] Student uses the same attributes that have been set up by Person
-// Student has the following unique props:
+//- Student has the following unique props:
 //[x] previousBackground i.e. what the Student used to do before Lambda School
 //[x] className i.e. CS132
 //[x] favSubjects. i.e. an array of the student's favorite subjects ['Html', 'CSS', 'JavaScript']
-// Student has the following methods:
+//- Student has the following methods:
 //[x/1-2] listsSubjects a method that logs out all of the student's favoriteSubjects one by one.
 //[x] PRAssignment a method that receives a subject as an argument and logs out that the student.name has submitted a PR for {subject}
 //[x] sprintChallenge similar to PRAssignment but logs out student.name has begun sprint challenge on {subject}
@@ -83,7 +83,7 @@ class Student extends Person{
 }
 
 /*
-// Project Manager
+//=== Project Manager ===
 //- Now that we have instructors and students, we'd be nowhere without our PM's
 //[x] ProjectManagers are extensions of Instructors
 //- ProjectManagers have the following unique props:
@@ -91,7 +91,7 @@ class Student extends Person{
 //[x] favInstructor: i.e. Sean
 //- ProjectManagers have the following Methods:
 //[x] standUp a method that takes in a slack channel and logs `{name} announces to {channel}, @channel standy times!​​​​​`
-//[] debugsCode a method that takes in a student object and a subject and logs out `{name} debugs {student.name}'s code on {subject}`
+//[x] debugsCode a method that takes in a student object and a subject and logs out `{name} debugs {student.name}'s code on {subject}`
 */
 
 class ProjectManager extends Instructor{
