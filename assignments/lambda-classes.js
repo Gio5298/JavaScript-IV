@@ -90,8 +90,8 @@ class Student extends Person{
 //[x] gradClassName: i.e. CS1
 //[x] favInstructor: i.e. Sean
 //- ProjectManagers have the following Methods:
-//[] standUp a method that takes in a slack channel and logs `{name} announces to {channel}, @channel standy times!​​​​​
-//[] debugsCode a method that takes in a student object and a subject and logs out {name} debugs {student.name}'s code on {subject}
+//[x] standUp a method that takes in a slack channel and logs `{name} announces to {channel}, @channel standy times!​​​​​`
+//[] debugsCode a method that takes in a student object and a subject and logs out `{name} debugs {student.name}'s code on {subject}`
 */
 
 class ProjectManager extends Instructor{
@@ -100,8 +100,11 @@ class ProjectManager extends Instructor{
         this.gradClassName = proManAttrs.gradClassName,
         this.favInstructor = proManAttrs.favInstructor
     };
-    standUp(){
+    standUp(channel = ['Web_25']){
         return `${this.name} anounces to ${channel}, @channel standy times!`
+    }
+    debugsCode(subject = ['HTML', 'CSS', 'Javascript']){
+        return `${this.name} debugs ${studentThree.name}'s code on ${subject[1]}`
     }
 }
 
@@ -157,9 +160,9 @@ const proManOne = new ProjectManager({
     specialty: 'javascript',
     favLanguage: 'CSS',
     catchPhrase: 'Shout out to pears',
-    previousBackground: 'Model',
-    className: 'Web25',
-    favSubjects: ['Redux', 'CSS', 'Python']
+    gradClassName: 'Web25',
+    favInstructor: 'Tyler',
+    channel: 'Web_25'
 })
 
 const proManTwo = new ProjectManager({
@@ -169,9 +172,8 @@ const proManTwo = new ProjectManager({
     specialty: 'javascript',
     favLanguage: 'CSS',
     catchPhrase: 'Life is a wild ride',
-    previousBackground: 'Actress',
-    className: 'Web25',
-    favSubjects: ['React', 'HTML', 'Javascript']
+    gradClassName: 'Web25',
+    favInstructor: 'Josh',
 })
 
 console.log(instructOne.demo());
@@ -179,3 +181,5 @@ console.log(instructTwo.grade());
 console.log(studentOne.listsSubjects());
 console.log(studentTwo.PRAssignment());
 console.log(studentThree.sprintChallenge());
+console.log(proManOne.standUp());
+console.log(proManTwo.debugsCode());
